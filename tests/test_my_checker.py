@@ -2,18 +2,13 @@
 Tests for `my_checker` module.
 """
 import pytest
-from my_checker import my_checker
+from my_checker import check_math
 
 
-class TestMy_checker(object):
+class TestCheckMath(object):
 
-    @classmethod
-    def setup_class(cls):
-        pass
+    def test_addition(self):
+        assert check_math(2 + 4, 6)
 
-    def test_something(self):
-        pass
-
-    @classmethod
-    def teardown_class(cls):
-        pass
+    def test_subtraction(self):
+    	assert check_math(4 - 2, 2)

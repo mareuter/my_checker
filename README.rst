@@ -12,7 +12,7 @@ My Checker
     :target: https://pypi.python.org/pypi/my_checker
 
 
-QQuuick math checker
+Quick math checker
 
 
 Features
