@@ -2,7 +2,7 @@
 sudo: false
 language: python
 before_script:
-  - pip install tox
+  - pip install -U tox
 
 matrix:
   include:
@@ -12,15 +12,18 @@ matrix:
     - python: 2.7
       env: 
       - TOXENV=py27-style
+    - python: 2.7
+      env: 
+      - TOXENV=py27-docs
     - python: 3.5
       env: 
       - TOXENV=py35
     - python: 3.5
       env: 
       - TOXENV=py35-style
-    - python: 2.7
+    - python: 3.5
       env: 
-      - TOXENV=docs
+      - TOXENV=py35-docs
     - python: pypy
       env: 
       - TOXENV=py27
