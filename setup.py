@@ -1,7 +1,4 @@
 #!/usr/bin/env python
-
-import pip
-from pip.req import parse_requirements
 import os
 import sys
 
@@ -23,18 +20,16 @@ Documentation
 The full documentation is at http://my_checker.rtfd.org."""
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
-parsed_requirements = parse_requirements(
-    'requirements/prod.txt',
-    session=pip.download.PipSession()
-)
-
-parsed_test_requirements = parse_requirements(
-    'requirements/dev.txt',
-    session=pip.download.PipSession()
-)
-
-requirements = [str(ir.req) for ir in parsed_requirements]
-test_requirements = [str(tr.req) for tr in parsed_test_requirements]
+requirements = []
+test_requirements = [
+"wheel>=0.22",
+"bumpversion",
+"flake8",
+"tox",
+"coverage",
+"Sphinx",
+"cryptography",
+"PyYAML"]
 
 setup(
     name='my_checker',
@@ -59,10 +54,9 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: Implementation :: PyPy',
     ],
     test_suite='tests',

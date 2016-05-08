@@ -7,23 +7,26 @@ before_script:
 matrix:
   include:
     - python: 2.7
-      env: TOXENV=py27
+      env: 
+      - TOXENV=py27
     - python: 2.7
-      env: TOXENV=style
+      env: 
+      - TOXENV=py27-style
     - python: 3.5
-      env: TOXENV=py35
+      env: 
+      - TOXENV=py35
     - python: 3.5
-      env: TOXENV=style
-    - python: 3.5
-      env: TOXENV=docs
+      env: 
+      - TOXENV=py35-style
+    - python: 2.7
+      env: 
+      - TOXENV=docs
     - python: pypy
-      env: TOXENV=py27
-    - python: pypy
-      env: TOXENV=style
+      env: 
+      - TOXENV=py27
     - python: pypy3
-      env: TOXENV=py35
-    - python: pypy3
-      env: TOXENV=style
+      env: 
+      - TOXENV=py35
 
 script: tox
 
