@@ -24,9 +24,6 @@ matrix:
     - python: pypy
       env: 
       - TOXENV=py27
-    - python: pypy3
-      env: 
-      - TOXENV=py35
 
 script: tox
 
