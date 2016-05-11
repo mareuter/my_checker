@@ -22,14 +22,15 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 requirements = []
 test_requirements = [
-"wheel>=0.22",
-"bumpversion",
-"flake8",
-"tox",
-"coverage",
-"Sphinx",
-"cryptography",
-"PyYAML"]
+    "wheel>=0.22",
+    "bumpversion",
+    "flake8",
+    "tox",
+    "coverage",
+    "Sphinx",
+    "cryptography",
+    "PyYAML"
+]
 
 setup(
     name='my_checker',
