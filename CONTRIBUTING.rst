@@ -58,7 +58,7 @@ Get Started!
 Ready to contribute? Here's how to set up `my_checker` for
 local development.
 
-1. Fork_ the `my_checker` repo on GitHub.
+1. Fork the `my_checker` repo on GitHub.
 2. Clone your fork locally::
 
     $ git clone git@github.com:your_name_here/my_checker.git
@@ -83,8 +83,6 @@ To get tox, just pip install it.
     $ git push origin name-of-your-bugfix-or-feature
 
 6. Submit a pull request through the GitHub website.
-
-.. _Fork: https://github.com/mareuter/my_checker/fork
 
 Pull Request Guidelines
 -----------------------
