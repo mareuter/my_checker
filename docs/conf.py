@@ -28,15 +28,19 @@ import my_checker
 on_rtd = os.environ.get('READTHEDOCS') == 'True'
 if on_rtd:
 	def run_apidoc(_):
+		cur_dir = os.path.abspath(os.path.dirname(__file__))
+		up_dir = os.path.dirname(cur_dir)
+		os.chdir(up_dir)
+		cmd_path = 'sphinx-apidoc'
+	    # Check to see if we are in a virtualenv
+	    if hasattr(sys, 'real_prefix'):  
+	       	# If we are, assemble the path manually
+	        cmd_path = os.path.abspath(os.path.join(sys.prefix, 'bin', 'sphinx-apidoc'))
 	    modules = ['my_checker']
 	    for module in modules:
-	        cur_dir = os.path.abspath(os.path.dirname(__file__))
-	        output_path = os.path.join(cur_dir, 'docs')
-	        cmd_path = 'sphinx-apidoc'
-	        # Check to see if we are in a virtualenv
-	        if hasattr(sys, 'real_prefix'):  
-	            # If we are, assemble the path manually
-	            cmd_path = os.path.abspath(os.path.join(sys.prefix, 'bin', 'sphinx-apidoc'))
+	        #cur_dir = os.path.abspath(os.path.dirname(__file__))
+	        #up_dir = os.path.dirname(cur_dir)
+	        #output_path = os.path.join(cur_dir, 'docs')
 	        subprocess.check_call([cmd_path, '-e', '--force', '-o', cur_dir, module])
 
 	def setup(app):
