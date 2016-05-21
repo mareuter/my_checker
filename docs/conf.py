@@ -12,6 +12,7 @@
 # serve to show the default.
 
 import sys, os
+import subprocess
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -23,6 +24,23 @@ parent = os.path.dirname(cwd)
 sys.path.insert(0, parent)
 
 import my_checker
+
+on_rtd = os.environ.get('READTHEDOCS') == 'True'
+if on_rtd:
+	def run_apidoc(_):
+	    modules = ['my_checker']
+	    for module in modules:
+	        cur_dir = os.path.abspath(os.path.dirname(__file__))
+	        output_path = os.path.join(cur_dir, 'docs')
+	        cmd_path = 'sphinx-apidoc'
+	        # Check to see if we are in a virtualenv
+	        if hasattr(sys, 'real_prefix'):  
+	            # If we are, assemble the path manually
+	            cmd_path = os.path.abspath(os.path.join(sys.prefix, 'bin', 'sphinx-apidoc'))
+	        subprocess.check_call([cmd_path, '-e', '--force', '-o', module])
+
+	def setup(app):
+	    app.connect('builder-inited', run_apidoc)
 
 # -- General configuration -----------------------------------------------------
 
