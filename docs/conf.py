@@ -11,8 +11,10 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys, os
+import os
+import shutil
 import subprocess
+import sys
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -28,6 +30,11 @@ import my_checker
 on_rtd = os.environ.get('READTHEDOCS') == 'True'
 if on_rtd:
     def run_apidoc(_):
+        # Move current index file out of the way.
+        shutil.move('index.rst', 'index_old.rst')
+        # Move index_rtd as index
+        shutil.move('index_rtd.rst', 'index.rst')
+        # Configure and run sphinx-apidoc
         cur_dir = os.path.abspath(os.path.dirname(__file__))
         up_dir = os.path.dirname(cur_dir)
         os.chdir(up_dir)
@@ -38,9 +45,6 @@ if on_rtd:
             cmd_path = os.path.abspath(os.path.join(sys.prefix, 'bin', 'sphinx-apidoc'))
         modules = ['my_checker']
         for module in modules:
-            #cur_dir = os.path.abspath(os.path.dirname(__file__))
-            #up_dir = os.path.dirname(cur_dir)
-            #output_path = os.path.join(cur_dir, 'docs')
             subprocess.check_call([cmd_path, '--force', '-o', cur_dir, module])
 
     def setup(app):
