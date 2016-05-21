@@ -31,9 +31,11 @@ on_rtd = os.environ.get('READTHEDOCS') == 'True'
 if on_rtd:
     def run_apidoc(_):
         # Move current index file out of the way.
-        shutil.move('index.rst', 'index_old.rst')
+        if not os.path.exists('index_old.rst'):
+            shutil.move('index.rst', 'index_old.rst')
         # Move index_rtd as index
-        shutil.move('index_rtd.rst', 'index.rst')
+        if os.path.exists('index_rtd.rst'):
+            shutil.move('index_rtd.rst', 'index.rst')
         # Configure and run sphinx-apidoc
         cur_dir = os.path.abspath(os.path.dirname(__file__))
         up_dir = os.path.dirname(cur_dir)
