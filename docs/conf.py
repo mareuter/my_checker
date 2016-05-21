@@ -41,7 +41,7 @@ if on_rtd:
             #cur_dir = os.path.abspath(os.path.dirname(__file__))
             #up_dir = os.path.dirname(cur_dir)
             #output_path = os.path.join(cur_dir, 'docs')
-            subprocess.check_call([cmd_path, '-e', '--force', '-o', cur_dir, module])
+            subprocess.check_call([cmd_path, '--force', '-o', cur_dir, module])
 
     def setup(app):
         app.connect('builder-inited', run_apidoc)
