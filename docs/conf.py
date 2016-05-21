@@ -37,8 +37,7 @@ if on_rtd:
 	        if hasattr(sys, 'real_prefix'):  
 	            # If we are, assemble the path manually
 	            cmd_path = os.path.abspath(os.path.join(sys.prefix, 'bin', 'sphinx-apidoc'))
-	        subprocess.check_call([cmd_path, '-e', '--force', '-o', cur_dir,
-	        					   os.path.join(cur_dir, '../', module)])
+	        subprocess.check_call([cmd_path, '-e', '--force', '-o', cur_dir, module])
 
 	def setup(app):
 	    app.connect('builder-inited', run_apidoc)
