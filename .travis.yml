@@ -33,7 +33,7 @@ script: tox
 deploy:
   distributions: sdist bdist_wheel
   true:
-    condition: $TOXENV == py35 && $TOXENV == py27
+    condition: $TOXENV == py35 || $TOXENV == py27
     repo: mareuter/my_checker
     branch: master
     tags: false
