@@ -34,8 +34,8 @@ test_requirements = [
 
 setup(
     name='my_checker',
-    version='0.1.0',
-    description='QQuuick math checker',
+    version='0.0.1',
+    description='Quick math checker',
     long_description=readme + '\n\n' + doclink + '\n\n' + history,
     author='Michael Reuter',
     author_email='mareuternh@gmail.com',
