@@ -35,7 +35,8 @@ deploy:
   true:
     condition: $TOXENV == py35 && $TOXENV == py27
     repo: mareuter/my_checker
-    tags: true
+    branch: master
+    tags: false
   password:
     secure: !!binary |
       dHNzRnM5eHI3VWMxMG5TZTd5aUlZbUIzUm1rTmF3b0JxU3pwY3k5TTNPMDBjR212cUc0RElGT21y
