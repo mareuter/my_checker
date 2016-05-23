@@ -32,7 +32,7 @@ script: tox
 
 deploy:
   distributions: sdist bdist_wheel
-  true:
+  on:
     condition: $TOXENV == py35 || $TOXENV == py27
     repo: mareuter/my_checker
     branch: master
@@ -53,4 +53,3 @@ deploy:
       bkxjVXpXaDU2dVhKNStVQk5pekN6UzlQNWIxL3RNU3VpanVlRXBIak1uSUUyeVo0aDFXNGgxalk9
   user: mareuter
   provider: pypi
-  server: https://testpypi.python.org/pypi
