@@ -3,11 +3,11 @@ My Checker
 =============================
 
 .. image:: https://img.shields.io/pypi/v/my_checker.svg
-    :target: https://pypi.python.org/pypi/my_checker
-   :alt: PyPi
+  :target: https://pypi.python.org/pypi/my_checker
+  :alt: PyPi
 
 .. image:: https://travis-ci.org/mareuter/my_checker.svg?branch=master
-    :target: https://travis-ci.org/mareuter/my_checker
+  :target: https://travis-ci.org/mareuter/my_checker
 
 .. image:: https://readthedocs.org/projects/my_checker/badge/?version=latest
   :target: http://my-checker.readthedocs.io/en/latest/?badge=latest
