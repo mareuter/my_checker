@@ -7,7 +7,7 @@ deploy:
     branch: master
     condition: $TOXENV == py35
     repo: mareuter/my_checker
-    tags: false
+    tags: true
   user: mareuter
   password:
     secure: !!binary |
