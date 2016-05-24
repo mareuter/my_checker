@@ -8,10 +8,6 @@ My Checker
 .. image:: https://travis-ci.org/mareuter/my_checker.png?branch=master
     :target: https://travis-ci.org/mareuter/my_checker
 
-.. image:: https://pypip.in/d/my_checker/badge.png
-    :target: https://pypi.python.org/pypi/my_checker
-
-
 Quick math checker
 
 
