@@ -2,8 +2,8 @@
 Contributing
 ============
 
-Contributions are welcome, and they are greatly appreciated! Every
-little bit helps, and credit will always be given. 
+Contributions are welcome, but this is a tiny package that I'm using for testing, so it won't be 
+very useful to anyone but me.
 
 You can contribute in many ways:
 

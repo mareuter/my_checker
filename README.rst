@@ -23,5 +23,5 @@ Quick math checker
 Features
 --------
 
-* TODO
+* Simple expression evaluation.
 

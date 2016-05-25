@@ -43,3 +43,5 @@ output/*/index.html
 docs/_build
 docs/modules.rst
 docs/my_checker.rst
+
+.cache
